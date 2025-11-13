@@ -9,11 +9,15 @@ const { createQueue } = require('@app-core/queue');
 
 const canLogEndpointInformation = process.env.CAN_LOG_ENDPOINT_INFORMATION;
 
-createConnection({
-  uri: process.env.MONGODB_URI,
-});
+if (process.env.MONGODB_URI && !process.env.MONGODB_URI.includes('localhost')) {
+  createConnection({
+    uri: process.env.MONGODB_URI,
+  });
+}
 
-createQueue();
+if (process.env.REDIS_URL && !process.env.REDIS_URL.includes('localhost')) {
+  createQueue();
+}
 
 const server = createServer({
   port: process.env.PORT,
@@ -24,6 +28,9 @@ const server = createServer({
 const ENDPOINT_CONFIGS = [
   {
     path: './endpoints/onboarding/',
+  },
+  {
+    path: './endpoints/payment-instruction/',
   },
 ];
 
