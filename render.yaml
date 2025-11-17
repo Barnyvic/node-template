@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: payment-instruction-api
+    env: node
+    buildCommand: npm install
+    startCommand: node bootstrap.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PINO_LOG_LEVEL
+        value: info
+      - key: USE_SECRETS_MANAGER
+        value: false
+      - key: USE_MOCK_MODEL
+        value: false
+
