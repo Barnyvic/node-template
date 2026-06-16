@@ -30,7 +30,7 @@ const ENDPOINT_CONFIGS = [
     path: './endpoints/onboarding/',
   },
   {
-    path: './endpoints/payment-instruction/',
+    path: './endpoints/creator-cards/',
   },
 ];
 
