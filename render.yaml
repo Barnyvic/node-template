@@ -13,4 +13,6 @@ services:
         value: false
       - key: USE_MOCK_MODEL
         value: false
+      - key: MONGODB_URI
+        sync: false
 
