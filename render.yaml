@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: payment-instruction-api
+    name: creator-card-api
     env: node
     buildCommand: npm install
     startCommand: node bootstrap.js
